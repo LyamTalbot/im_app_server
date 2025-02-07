@@ -1,0 +1,3 @@
+/Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server/cmake-build-debug/CMakeFiles/im_app_server.dir
+/Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server/cmake-build-debug/CMakeFiles/rebuild_cache.dir

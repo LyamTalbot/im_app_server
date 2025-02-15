@@ -6,7 +6,6 @@
 #define IM_APP_STRUCTS_H
 #include <string>
 #include <vector>
-#include "shared_mutexes.h"
 
 struct user_struct {
     std::string username;

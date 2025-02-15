@@ -10,4 +10,6 @@
 
 extern std::shared_mutex database_mutex;
 
+extern std::shared_mutex map_mutex;
+
 #endif //SHARED_MUTEXES_H

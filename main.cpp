@@ -4,8 +4,11 @@
 #include "Poco/Net/TCPServerConnection.h"
 #include "Poco/Net/TCPServer.h"
 #include "Poco/Net/StreamSocket.h"
+#include "Poco/Net/SocketAddress.h"
 #include <type_traits>
 #include "im_app_structs.h"
+#include "shared_mutexes.hpp"
+#include "user_socket_map.hpp"
 
 #define SIZE 4096
 
@@ -57,18 +60,44 @@ using namespace Poco::Net;
  *     can I just buffer >> username >> password; ?
  */
 
+/*
+ * We will want to iterate over the hashmap of socket pointers and then write to them.
+ * Can use this
+ * for (auto& it: B){
+ *      // Do stuff
+ *      cout << it.first;
+ *      }
+ */
+
 class EchoConnection : public TCPServerConnection {
 public:
-    explicit EchoConnection(const Poco::Net::StreamSocket& s) : TCPServerConnection(s) {}
+    explicit EchoConnection(const StreamSocket& s) : TCPServerConnection(s) {}
 
     bool logged_in = false;
     void run() override {
         user_struct user;
         StreamSocket& ss = socket();
+        //TODO add a mutex for this
+        map_mutex.lock();
+        port_socket_map[ss.peerAddress().port()] = &ss;
+        map_mutex.unlock();
         ss.setBlocking(true);
-        if (!logged_in) {
-            std::string message = "Please enter a username and password";
-            ss.sendBytes(message.c_str(), message.size());
+        // if (!logged_in) {
+        //     char buffer[SIZE];
+        //     std::string message = "Please enter a username and password";
+        //     ss.sendBytes(message.c_str(), message.size());
+            //TODO get username and password - did I decide on how that information will be encoded?
+            //we can get the port number from ss.peerAddress();
+            //will return the IP and port number of the port on the other side.
+            //Instead of fucking around with user auth I'll just try to implement the ability to broadcast
+            //to all connected clients before I go any further.
+            //Once that's done I'll implement logins
+            //Then after we have that set up I'll try to direct a message to a particular user.
+            // n = ss.receiveBytes(buffer, sizeof(buffer));
+            // std::string username = buffer;
+            // user_socket_map[username] = &ss;
+            //TODO split username off -> add them to the hashmap with a reference to the socket
+
             //TODO integrate user_authentication
             //Will need users set up first
             //First create a text file with the formatting for saving users
@@ -76,7 +105,7 @@ public:
             //If that works we can try to login with the python script on
             //I guess this is why unit tests are good, testing things in isolation before
             //trying to integrate the code.
-        }
+        // }
         try {
             char buffer[SIZE];
             int n = ss.receiveBytes(buffer, sizeof(buffer));

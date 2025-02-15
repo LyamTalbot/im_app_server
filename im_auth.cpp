@@ -10,7 +10,7 @@
 //
 
 
-user_struct create_user_struct(const std::string& user_details) {
+std::vector<std::string> get_user_details(const std::string& user_details) {
     user_struct new_user;
     std::istringstream iss(user_details);
     std::vector<std::string> tokens;
@@ -18,10 +18,7 @@ user_struct create_user_struct(const std::string& user_details) {
     while (std::getline(iss, token, ',')) {
         tokens.push_back(token);
     }
-    new_user.username = tokens[0];
-    new_user.pw_hash = tokens[1];
-    new_user.salt = tokens[2];
-    return new_user;
+    return tokens;
 }
 
 user_struct create_new_user(std::string username, std::string password) {
@@ -38,38 +35,54 @@ user_struct create_new_user(std::string username, std::string password) {
  * Parse it and create a user struct.
  * Store in a vector of users
  */
-std::vector<user_struct> get_users() {
+
+//Replace vector of users with an unordered_map?
+//std::unordered_map<std::string, std::string[]>
+std::unordered_map<std::string, std::array<std::string, 2>> get_users() {
+    std::unordered_map<std::string, std::array<std::string, 2>> user_map;
     std::fstream database;
-    read_mutex.lock();
+    database_mutex.lock_shared();
     database.open("users.txt");
-    std::vector<user_struct> users;
+    // std::vector<user_struct> users;
     if (database.is_open()) {
         std::string line;
         std::getline(database, line); //clear the first line
         while (std::getline(database, line)) {
-            user_struct new_user = create_user_struct(line);
-            users.push_back(new_user);
+            std::vector<std::string> user_tokens = get_user_details(line);
+            user_map[user_tokens[0]] = { user_tokens[0], user_tokens[1] };
         }
     } else {
         throw std::runtime_error("Unable to open database file");
     }
     database.close();
-    read_mutex.unlock();
-    return users;
+    database_mutex.unlock_shared();
+    return user_map;
 }
 
+
 int store_users(std::vector<user_struct> users) {
-    std::fstream database;s
-    write_mutex.lock();
-    database.open("users.txt", std::ios::in);
+    std::fstream database;
+    database_mutex.lock();
+    database.open("users.txt", std::ios::out);
     if (database.is_open()) {
         //TODO: Store users as comma separated values
         //Need to put in a header that describes what the values are
         //Loop through the vector and print one line to the file for each
+        database << "username,password,salt" << std::endl;
+        for (auto & user : users) {
+            database << user.username << "," << user.pw_hash << "," << user.salt << std::endl;
+            if (database.fail()) {
+                database_mutex.unlock();
+                std::cerr << "Unable to write to database file" << std::endl;
+                return -1;
+            }
+        }
     } else {
-        write_mutex.unlock();
-        throw std::runtime_error("Unable to open database file");
+        database_mutex.unlock();
+        std::cerr << "Unable to open database file" << std::endl;
+        return -1;
     }
+    return 0;
 }
 
 std::string generate_salt() {
@@ -82,4 +95,9 @@ std::string generate_salt() {
         salt.push_back(static_cast<char>(distribution(generator)));
     }
     return salt;
+}
+
+bool authenticate(const std::string& username, const std::string& password) {
+    std::unordered_map<std::string, std::array<std::string, 2>> users = get_users();
+    return true;
 }

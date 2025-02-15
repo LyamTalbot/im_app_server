@@ -9,10 +9,13 @@
 #include <fstream>
 #include <ostream>
 #include <sstream>
+#include "shared_mutexes.hpp"
 
-user_struct create_user_struct(const std::string& user_details);
+std::vector<std::string> get_user_details(const std::string& user_details);
 
-std::vector<user_struct> get_users();
+std::unordered_map<std::string, std::array<std::string,2>> get_users();
+
+std::unordered_map<std::string, std::string> get_user_test();
 
 int store_users(std::vector<user_struct> users);
 
@@ -20,6 +23,6 @@ std::string generate_salt();
 
 std::string hash_password(const char *password);
 
-bool authenticate(const char *username, const char *password);
+bool authenticate(const std::string& username, const std::string& password);
 
 #endif //IM_AUTH_H

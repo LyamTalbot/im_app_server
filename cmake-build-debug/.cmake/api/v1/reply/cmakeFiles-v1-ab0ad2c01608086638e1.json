@@ -1,0 +1,432 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/zlib/vcpkg-cmake-wrapper.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindZLIB.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoNetConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoNetConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/FindPCRE2.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/unofficial-utf8proc/unofficial-utf8proc-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/unofficial-utf8proc/unofficial-utf8proc-config-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/unofficial-utf8proc/unofficial-utf8proc-config-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationTargets-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoNetTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoNetTargets-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoNetTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoFoundationTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoUtilConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoUtilConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoXMLConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoXMLConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/vcpkg-cmake-wrapper.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/expat/expat-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoXMLTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoXMLTargets-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoXMLTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoJSONConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoJSONConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoJSONTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoJSONTargets-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoJSONTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoUtilTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoUtilTargets-debug.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/share/poco/PocoUtilTargets-release.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server/cmake-build-debug",
+		"source" : "/Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

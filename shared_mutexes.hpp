@@ -8,7 +8,6 @@
 #include <mutex>
 #include <shared_mutex>
 
-extern std::mutex write_mutex;
-extern std::shared_mutex read_mutex;
+extern std::shared_mutex database_mutex;
 
 #endif //SHARED_MUTEXES_H

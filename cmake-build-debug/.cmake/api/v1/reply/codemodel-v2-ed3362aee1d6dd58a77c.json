@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.30.5"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "debug",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "im_app_server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-im_app_server-Debug-809d148eb71a909dd3e4.json",
+					"jsonFile" : "target-im_app_server-debug-7dd864b42f267de77b21.json",
 					"name" : "im_app_server",
 					"projectIndex" : 0
 				}

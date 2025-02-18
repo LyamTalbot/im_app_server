@@ -11,7 +11,7 @@
 
 
 std::vector<std::string> get_user_details(const std::string& user_details) {
-    user_struct new_user;
+    user_struct_t new_user;
     std::istringstream iss(user_details);
     std::vector<std::string> tokens;
     std::string token;
@@ -21,8 +21,8 @@ std::vector<std::string> get_user_details(const std::string& user_details) {
     return tokens;
 }
 
-user_struct create_new_user(std::string username, std::string password) {
-    user_struct new_user;
+user_struct_t create_new_user(std::string username, std::string password) {
+    user_struct_t new_user;
     new_user.username = std::move(username);
     new_user.pw_hash = std::move(password);
     new_user.salt = generate_salt();
@@ -60,7 +60,7 @@ std::unordered_map<std::string, std::array<std::string, 2>> get_users() {
 }
 
 
-int store_users(std::vector<user_struct> users) {
+int store_users(std::vector<user_struct_t> users) {
     std::fstream database;
     database_mutex.lock();
     database.open("users.txt", std::ios::out);

@@ -1,11 +1,9 @@
 #include <iostream>
-#include <cxxabi.h>
 #include "Poco/Net/DNS.h"
 #include "Poco/Net/TCPServerConnection.h"
 #include "Poco/Net/TCPServer.h"
 #include "Poco/Net/StreamSocket.h"
 #include "Poco/Net/SocketAddress.h"
-#include <type_traits>
 #include "im_app_structs.h"
 #include "shared_mutexes.hpp"
 #include "user_socket_map.hpp"
@@ -41,8 +39,8 @@ using namespace Poco::Net;
  * 2. This auth will need to be inside the run function inside EchoConnection because each thread will need to authenticate
  *    the user connected on the other end. Each connection is to a different user and will need a different auth.
  *    Luckily the threads isolate this from each other so that makes handling and authenticating multiple users pretty easy.
- *    Still need to think about how the EchoConnetion is going to have access to the data file and where that will be loaded in?
- *    I could load the file in directly for each auth request? Dunno.
+ *    Still need to think about how the EchoConnection is going to have access to the data file and where that will be loaded in?
+ *    I could load the file in directly for each auth request?
  *
  *  3. Sending messages to other people
  *     Once basic authentication is
@@ -69,19 +67,64 @@ using namespace Poco::Net;
  *      }
  */
 
+
+//Going to multithread the run function? Am I even capable of this? I guess we'll find out lewl.
+//Need to make a thread entry point for the writer. It'll will need its own socket
+//This socket will be responsible for sending back to the client.
+//Complication, how do I get this connected to the same instance of the program at the other end? Shit
+//I'll have to thread the client and have it open another socket, it has to listen on that socket that's
+//its inbound connection
+//I then connect to the server which will the client's outbound to the servers inbound.
+//It will have to send the port number of this waiting connection.
+//this will need to be threaded because the listener thread will block on s.accept() it will just wait for incoming
+//connections
+
+
+//The listener thread running by default in run() will be connected to the inbound socket
+//Don't need to store that information because it's not relevant for SENDING to other users
+//What we need to do is store a pointer the OUTBOUND socket to each user
+//Because that's what we'll use to send to that person
+void update_user_map(StreamSocket* socket) {
+    auto* socket_data = new socket_data_struct_t();
+    socket_data->address = socket->peerAddress();
+    socket_data->sp = socket;
+    database_mutex.lock();
+    socket_data_map[socket->peerAddress().port()] = socket_data;
+    database_mutex.unlock();
+}
+
 class EchoConnection : public TCPServerConnection {
 public:
     explicit EchoConnection(const StreamSocket& s) : TCPServerConnection(s) {}
 
+
+
     bool logged_in = false;
     void run() override {
-        user_struct user;
-        StreamSocket& ss = socket();
+        auto* socket_data = new socket_data_struct_t();
+        StreamSocket& ss = socket(); //inbound socket
         //TODO add a mutex for this
-        map_mutex.lock();
-        port_socket_map[ss.peerAddress().port()] = &ss;
-        map_mutex.unlock();
         ss.setBlocking(true);
+        socket_data->address = ss.peerAddress();
+        socket_data->sp = &ss;
+        database_mutex.lock();
+        socket_data_map[ss.peerAddress().port()] = socket_data;
+        database_mutex.unlock();
+        const std::string& hostName = "127.0.0.1";
+        Poco::UInt16 port;
+        std::thread t([&]() { //outbound socket
+            //TODO set up new thread to send data back to client
+            //the client will need to send it's other port number
+            SocketAddress address = SocketAddress(hostName, port);
+            StreamSocket outbound(address);
+            outbound.setBlocking(true);
+            update_user_map(&outbound);
+            while (true) {
+                //TODO send messages?
+                break;
+            }
+
+        });
         // if (!logged_in) {
         //     char buffer[SIZE];
         //     std::string message = "Please enter a username and password";
@@ -110,13 +153,28 @@ public:
             char buffer[SIZE];
             int n = ss.receiveBytes(buffer, sizeof(buffer));
             while (n > 0) {
+                for (auto const& [key,val] : socket_data_map) {
+                    try {
+                        if (key != ss.peerAddress().port()) {
+                            val->socket_mutex.lock();
+                            val->sp->sendBytes(buffer, n);
+                            val->socket_mutex.unlock();
+                        }
+                    } catch (std::exception& e) {
+                        std::cout << "Exception: " << e.what() << std::endl;
+                    }
+                }
                 ss.sendBytes(buffer, n);
                 n = ss.receiveBytes(buffer, sizeof(buffer));
             }
         } catch (Poco::Exception& e) {
             std::cerr << "EchoConnection: " << e.displayText() << std::endl;
         }
-
+    //Will have to ensure this code runs
+    //trying to clean up data so we don't have hanging pointers and memory leaks
+        t.join();
+        socket_data_map.erase(ss.peerAddress().port());
+        delete socket_data;
     }
 };
 

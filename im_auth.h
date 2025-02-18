@@ -17,7 +17,7 @@ std::unordered_map<std::string, std::array<std::string,2>> get_users();
 
 std::unordered_map<std::string, std::string> get_user_test();
 
-int store_users(std::vector<user_struct> users);
+int store_users(std::vector<user_struct_t> users);
 
 std::string generate_salt();
 

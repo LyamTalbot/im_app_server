@@ -102,29 +102,19 @@ public:
     bool logged_in = false;
     void run() override {
         auto* socket_data = new socket_data_struct_t();
-        StreamSocket& ss = socket(); //inbound socket
+        StreamSocket& in_socket = socket(); //inbound socket
         //TODO add a mutex for this
-        ss.setBlocking(true);
-        socket_data->address = ss.peerAddress();
-        socket_data->sp = &ss;
+        in_socket.setBlocking(true);
+        socket_data->address = in_socket.peerAddress();
+        socket_data->sp = &in_socket;
         database_mutex.lock();
-        socket_data_map[ss.peerAddress().port()] = socket_data;
+        socket_data_map[in_socket.peerAddress().port()] = socket_data;
         database_mutex.unlock();
         const std::string& hostName = "127.0.0.1";
         Poco::UInt16 port;
-        std::thread t([&]() { //outbound socket
-            //TODO set up new thread to send data back to client
-            //the client will need to send it's other port number
-            SocketAddress address = SocketAddress(hostName, port);
-            StreamSocket outbound(address);
-            outbound.setBlocking(true);
-            update_user_map(&outbound);
-            while (true) {
-                //TODO send messages?
-                break;
-            }
-
-        });
+        SocketAddress outbound_address = SocketAddress(hostName, port);
+        StreamSocket out_socket = StreamSocket(outbound_address);
+        update_user_map(&out_socket);
         // if (!logged_in) {
         //     char buffer[SIZE];
         //     std::string message = "Please enter a username and password";
@@ -151,11 +141,11 @@ public:
         // }
         try {
             char buffer[SIZE];
-            int n = ss.receiveBytes(buffer, sizeof(buffer));
+            int n = in_socket.receiveBytes(buffer, sizeof(buffer));
             while (n > 0) {
                 for (auto const& [key,val] : socket_data_map) {
                     try {
-                        if (key != ss.peerAddress().port()) {
+                        if (key != in_socket.peerAddress().port()) {
                             val->socket_mutex.lock();
                             val->sp->sendBytes(buffer, n);
                             val->socket_mutex.unlock();
@@ -164,16 +154,15 @@ public:
                         std::cout << "Exception: " << e.what() << std::endl;
                     }
                 }
-                ss.sendBytes(buffer, n);
-                n = ss.receiveBytes(buffer, sizeof(buffer));
+                in_socket.sendBytes(buffer, n);
+                n = in_socket.receiveBytes(buffer, sizeof(buffer));
             }
         } catch (Poco::Exception& e) {
             std::cerr << "EchoConnection: " << e.displayText() << std::endl;
         }
     //Will have to ensure this code runs
     //trying to clean up data so we don't have hanging pointers and memory leaks
-        t.join();
-        socket_data_map.erase(ss.peerAddress().port());
+        socket_data_map.erase(in_socket.peerAddress().port());
         delete socket_data;
     }
 };

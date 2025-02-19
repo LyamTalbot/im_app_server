@@ -81,6 +81,14 @@ build CMakeFiles/im_app_server.dir/user_socket_map.cpp.o: CXX_COMPILER__im_app_s
   OBJECT_DIR = CMakeFiles/im_app_server.dir
   OBJECT_FILE_DIR = CMakeFiles/im_app_server.dir
 
+build CMakeFiles/im_app_server.dir/sender_receiver.cpp.o: CXX_COMPILER__im_app_server_unscanned_debug /Users/lyamtalbot/Library/CloudStorage/OneDrive-UniversityofNewEngland/personal_projects/c_projects/im_app_server/sender_receiver.cpp || cmake_object_order_depends_target_im_app_server
+  DEFINES = -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_IPv6 -DPOCO_NO_STAT64 -DPOCO_OS_FAMILY_UNIX -DPOCO_UNBUNDLED -DUTF8PROC_STATIC -D_DEBUG
+  DEP_FILE = CMakeFiles/im_app_server.dir/sender_receiver.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  OBJECT_DIR = CMakeFiles/im_app_server.dir
+  OBJECT_FILE_DIR = CMakeFiles/im_app_server.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target im_app_server
@@ -89,7 +97,7 @@ build CMakeFiles/im_app_server.dir/user_socket_map.cpp.o: CXX_COMPILER__im_app_s
 #############################################
 # Link the executable im_app_server
 
-build im_app_server: CXX_EXECUTABLE_LINKER__im_app_server_debug CMakeFiles/im_app_server.dir/main.cpp.o CMakeFiles/im_app_server.dir/im_auth.cpp.o CMakeFiles/im_app_server.dir/shared_mutexes.cpp.o CMakeFiles/im_app_server.dir/user_socket_map.cpp.o | /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoNetd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoUtild.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoXMLd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libexpat.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoJSONd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoFoundationd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libpcre2-8.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libz.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libutf8proc.a
+build im_app_server: CXX_EXECUTABLE_LINKER__im_app_server_debug CMakeFiles/im_app_server.dir/main.cpp.o CMakeFiles/im_app_server.dir/im_auth.cpp.o CMakeFiles/im_app_server.dir/shared_mutexes.cpp.o CMakeFiles/im_app_server.dir/user_socket_map.cpp.o CMakeFiles/im_app_server.dir/sender_receiver.cpp.o | /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoNetd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoUtild.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoXMLd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libexpat.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoJSONd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoFoundationd.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libpcre2-8.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libz.a /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libutf8proc.a
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk
   LINK_LIBRARIES = /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoNetd.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoUtild.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoXMLd.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libexpat.a  -lm  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoJSONd.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libPocoFoundationd.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libpcre2-8.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libz.a  /Users/lyamtalbot/.vcpkg-clion/vcpkg/installed/arm64-osx/debug/lib/libutf8proc.a
   OBJECT_DIR = CMakeFiles/im_app_server.dir

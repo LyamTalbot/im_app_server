@@ -6,6 +6,7 @@
 #define IM_APP_STRUCTS_H
 #include <string>
 #include <vector>
+#include <queue>
 #include "Poco/Net/StreamSocket.h"
 
 struct user_struct_t {
@@ -15,16 +16,17 @@ struct user_struct_t {
     std::vector<std::string> messages;
 };
 
-struct socket_data_struct_t {
-    Poco::Net::SocketAddress address;
-    Poco::Net::StreamSocket* sp;
-    std::mutex socket_mutex;
-};
-
 struct message_struct_t {
     std::string sender;
     std::string message;
     std::time_t timestamp;
+};
+
+struct socket_data_struct_t {
+    Poco::Net::SocketAddress address;
+    Poco::Net::StreamSocket* sp;
+    std::mutex socket_mutex;
+    std::queue<message_struct_t> message_queue;
 };
 
 

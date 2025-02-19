@@ -16,7 +16,9 @@ set(SOURCE_FILES main.cpp
         shared_mutexes.hpp
         shared_mutexes.cpp
         user_socket_map.hpp
-        user_socket_map.cpp)
+        user_socket_map.cpp
+        sender_receiver.h
+        sender_receiver.cpp)
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(im_app_server ${SOURCE_FILES})

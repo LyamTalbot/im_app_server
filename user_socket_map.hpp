@@ -13,4 +13,8 @@ extern std::unordered_map<int, Poco::Net::StreamSocket*> port_socket_map;
 
 extern std::unordered_map<int, socket_data_struct_t*> socket_data_map;
 
+extern std::unordered_map<int, socket_data_struct_t*> port_data_map;
+
+extern std::unordered_map<std::string, socket_data_struct_t*> user_data_map;
+
 #endif //USER_SOCKET_MAP_H
